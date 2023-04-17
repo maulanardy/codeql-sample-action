@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-codeql database analyze --format=sarif-latest --output=./ query
+./codeql/codeql database analyze --format=sarif-latest --output=./ query
 # echo "Hello $1"
 echo "Hello bang"
 time=$(date)
