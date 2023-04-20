@@ -4,13 +4,15 @@ FROM mcr.microsoft.com/cstsectools/codeql-container
 
 USER root
 
-ENV CODEQL_CLI_ARGS="database analyze /opt/databases/openssl --format=sarif-latest --output=/opt/output/$1-result.sarif /opt/queries/$1/"
+ARG USERNAME=john-doe
+
+ENV CODEQL_CLI_ARGS="database analyze /opt/databases/openssl --format=sarif-latest --output=/opt/output/$USERNAME-result.sarif /opt/queries/$USERNAME/"
 
 RUN ["chmod", "+x", "/usr/local/startup_scripts/setup.py"]
 
 COPY . /opt/
 
-RUN cd /opt/queries/$1 && codeql pack install
+RUN cd /opt/queries/$USERNAME && codeql pack install
 
 # FROM ubuntu:20.04 AS codeql_base
 # LABEL maintainer="Github codeql team"
