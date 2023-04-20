@@ -12,8 +12,6 @@ COPY . /opt/
 
 RUN cd /opt/queries/john-doe && codeql pack install
 
-RUN cd /opt/output && mkdir john-doe
-
 # FROM ubuntu:20.04 AS codeql_base
 # LABEL maintainer="Github codeql team"
 
