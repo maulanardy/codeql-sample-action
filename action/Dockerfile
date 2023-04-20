@@ -6,13 +6,13 @@ USER root
 
 ARG USERNAME=john-doe
 
-ENV CODEQL_CLI_ARGS="database analyze /opt/databases/openssl --format=sarif-latest --output=/opt/output/$USERNAME-result.sarif /opt/queries/$USERNAME/"
+ENV CODEQL_CLI_ARGS="database analyze /opt/databases/openssl --format=sarif-latest --output=/opt/output/$USERNAME-result.sarif /opt/queries/"
 
 RUN ["chmod", "+x", "/usr/local/startup_scripts/setup.py"]
 
 COPY . /opt/
 
-RUN cd /opt/queries/$USERNAME && codeql pack install
+RUN cd /opt/queries && codeql pack install
 
 # FROM ubuntu:20.04 AS codeql_base
 # LABEL maintainer="Github codeql team"
