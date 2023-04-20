@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/cstsectools/codeql-container
 
 USER root
 
-ENV CODEQL_CLI_ARGS="database analyze /opt/databases/openssl --format=sarif-latest --output=/opt/output/john-doe/result.sarif /opt/queries/john-doe/"
+ENV CODEQL_CLI_ARGS="database analyze /opt/databases/openssl --format=sarif-latest --output=/opt/output/john-doe-result.sarif /opt/queries/john-doe/"
 
 RUN ["chmod", "+x", "/usr/local/startup_scripts/setup.py"]
 
