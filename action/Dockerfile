@@ -5,14 +5,16 @@ FROM mcr.microsoft.com/cstsectools/codeql-container
 USER root
 
 ARG USERNAME=john-doe
+ENV USERNAME=$USERNAME
 
-ENV CODEQL_CLI_ARGS="database analyze /opt/databases/openssl --format=sarif-latest --output=/opt/output/$USERNAME-result.sarif /opt/queries/"
+# ENV CODEQL_CLI_ARGS="database analyze /opt/databases/openssl --format=sarif-latest --output=/opt/output/$USERNAME-result.sarif /opt/queries/"
 
 RUN ["chmod", "+x", "/usr/local/startup_scripts/setup.py"]
 
+COPY entrypoint.sh /entrypoint.sh
 COPY . /opt/
 
-RUN cd /opt/queries && codeql pack install
+# RUN cd /opt/queries && codeql pack install
 
 # FROM ubuntu:20.04 AS codeql_base
 # LABEL maintainer="Github codeql team"
@@ -107,4 +109,5 @@ RUN cd /opt/queries && codeql pack install
 # # COPY codeql-bundle-linux64 codeql
 
 # # Code file to execute when the docker container starts up (`entrypoint.sh`)
-# ENTRYPOINT ["/entrypoint.sh"]
+RUN ["chmod", "+x", "/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

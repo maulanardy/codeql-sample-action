@@ -9,4 +9,4 @@ echo "creating docker image for user: $USERNAME"
 
 # here we can make the construction of the image as customizable as we need
 # and if we need parameterizable values it is a matter of sending them as inputs
-docker build -t qcve/action --build-arg USERNAME="$USERNAME" . && docker run -v $OUTPUTPATH:/opt/output $QUERYPATH:/opt/queries qcve/action
+docker build -t qcve/action --build-arg USERNAME="$USERNAME" . && docker run -v $OUTPUTPATH:/opt/output -v $QUERYPATH:/opt/queries qcve/action
