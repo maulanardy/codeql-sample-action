@@ -6,6 +6,9 @@ inputs:
   username:
     description: 'Username'
     required: true
+  query:
+    description: 'Query path'
+    required: true
   report:
     description: 'Report path'
     required: true
@@ -17,3 +20,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.username }}
+    - ${{ inputs.query }}
+    - ${{ inputs.report }}
