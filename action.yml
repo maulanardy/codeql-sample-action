@@ -16,5 +16,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - USERNAME=baka
-    # - USERNAME=${{ inputs.username }}
+    - ${{ inputs.username }}
