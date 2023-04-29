@@ -12,9 +12,9 @@ inputs:
   report:
     description: 'Report path'
     required: true
-# outputs:
-#   time: # id of output
-#     description: 'The time we greeted you'
+  database:
+    description: 'Database'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -22,3 +22,4 @@ runs:
     - ${{ inputs.username }}
     - ${{ inputs.query }}
     - ${{ inputs.report }}
+    - ${{ inputs.database }}
