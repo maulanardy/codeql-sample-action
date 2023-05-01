@@ -1,5 +1,5 @@
 # action.yml
-name: "QCVE - Code Scanning"
+name: "QCVE - Code Scanning Sample"
 description: "Run CodeQL Query against Public Project Databases"
 
 inputs:
