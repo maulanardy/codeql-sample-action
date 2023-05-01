@@ -4,8 +4,10 @@ USER root
 
 ARG USERNAME=john-doe
 ARG DATABASE=openssl
+ARG NUMBER=1
 ENV USERNAME=$USERNAME
 ENV DATABASE=$DATABASE
+ENV NUMBER=$NUMBER
 
 RUN ["chmod", "+x", "/usr/local/startup_scripts/setup.py"]
 
