@@ -1,22 +1,32 @@
-# Hello world docker action
+# QCVE - Code Scanning Example
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
-
-## Inputs
-
-## `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
-
-## Outputs
-
-## `time`
-
-The time we greeted you.
+This action analyze submitted CodeQL Query against Pre-defined Databases from public project, and return sarif report to folder
 
 ## Example usage
 
 ```
-uses: actions/hello-world-docker-action@v2
+name: CodeQL Scan
+id: scan
+uses: maulanardy/codeql-sample-action@v1.2.0
 with:
-  who-to-greet: 'Mona the Octocat'
+  username: 'john'
+  report: '${{ github.workspace }}/output/john'
+  query: '${{ github.workspace }}/queries/john'
+  database: 'openssl'
+  number: 1
+
+```
+
+## Inputs
+
+- `username`: the name of the owner of the query.
+- `report`: location of generated sarif report.
+- `query`: location of submitted query.
+- `database`: selected database to analyze.
+- `number`: unique request number
+
+
+## Available databases
+
+- `openssl`: database languange `javascript`.
+- `bitcoin`:  database languange `javascript`.

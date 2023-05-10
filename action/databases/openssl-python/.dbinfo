@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:dbinfo xmlns:ns2="https://semmle.com/schemas/dbinfo">
+    <sourceLocationPrefix>/home/runner/work/bulk-builder/bulk-builder</sourceLocationPrefix>
+    <baselineLinesOfCode>216549</baselineLinesOfCode>
+    <unicodeNewlines>false</unicodeNewlines>
+    <columnKind>utf32</columnKind>
+    <primaryLanguage>python</primaryLanguage>
+    <creationMetadata>
+        <sha>1009940c14716ac03d5f161bdb4ae626ec6fe729</sha>
+        <cliVersion>2.13.0</cliVersion>
+        <creationTime>2023-05-01T15:40:26.622171059Z</creationTime>
+    </creationMetadata>
+</ns2:dbinfo>
