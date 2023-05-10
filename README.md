@@ -29,4 +29,6 @@ with:
 ## Available databases
 
 - `openssl`: database languange `javascript`.
+- `openssl-python`: database languange `python`.
+- `openssl-cpp`: database languange `cpp`.
 - `bitcoin`:  database languange `javascript`.
